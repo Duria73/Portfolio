@@ -3,7 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My first three.js app</title>
+    <title>Find Alex</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
     <style>
         body {
             margin: 0;
@@ -16,6 +21,14 @@
 </head>
 
 <body>
+
+    <div id="container">
+        <div id="overlay"><h1 class="title">Hello, I'm <span class="name">Alexander Duria</span>.</h1><h2 class="title">I'm a Full-Stack Web Developer.</h2>
+        <button>View My Work  <i class="fas fa-angle-double-down"></i></button>
+     
+  
+</button></div>
+    </div>
 
     <script src="js/three.js"></script>
     <script>
@@ -71,7 +84,7 @@
                         cloud.rotation.x = 1.16;
                         cloud.rotation.y = -0.12;
                         cloud.rotation.z = Math.random() * 2 * Math.PI;
-                        cloud.material.opacity = 0.55;
+                        cloud.material.opacity = .55;
                         cloudParticles.push(cloud);
                         scene.add(cloud);
                     }
@@ -82,7 +95,7 @@
             }
             function render() {
                 cloudParticles.forEach(p => {
-                    p.rotation.z -=0.002;
+                    p.rotation.z -=0.001;
                 });
                 renderer.render(scene, camera);
                 requestAnimationFrame(render);
